@@ -1,6 +1,6 @@
 # OpenClaw Multi-Agent Wizard
 
-A beginner-friendly Codex/OpenClaw skill that helps users create OpenClaw multi-agent setups step by step, with a strong focus on simple explanations, Feishu onboarding, and safe defaults.
+A beginner-friendly OpenClaw skill that helps users create OpenClaw multi-agent setups step by step, with a strong focus on simple explanations, Feishu onboarding, and safe defaults.
 
 ## GitHub Description
 
