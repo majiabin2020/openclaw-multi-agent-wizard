@@ -1,29 +1,35 @@
 # OpenClaw Multi-Agent Wizard
 
-A beginner-friendly OpenClaw skill that helps users create OpenClaw multi-agent setups step by step, with a strong focus on simple explanations, Feishu onboarding, and safe defaults.
+[中文说明](./README.zh-CN.md)
 
-## GitHub Description
+![GitHub Release](https://img.shields.io/github/v/release/majiabin2020/openclaw-multi-agent-wizard)
+![GitHub License](https://img.shields.io/github/license/majiabin2020/openclaw-multi-agent-wizard)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/majiabin2020/openclaw-multi-agent-wizard/validate.yml?branch=main)
 
-Short repository description:
+A beginner-friendly OpenClaw skill for Codex that guides users through multi-agent setup step by step, with safe defaults, simple explanations, and Feishu-focused onboarding.
 
-> A beginner-friendly OpenClaw multi-agent setup wizard for Codex, with safe Feishu onboarding and automatic starter profile generation.
+![OpenClaw Multi-Agent Wizard preview](./assets/repo-preview.svg)
 
-Suggested first release tagline:
+## Why This Repository Exists
 
-> Build OpenClaw multi-agent step by step, even if you do not understand the underlying configuration yet.
+Most multi-agent setup guides assume the user already understands agent IDs, bindings, routing, group mapping, and channel integration details.
 
-This skill is designed for users who do **not** already understand OpenClaw concepts like agents, bindings, routing, `chat_id`, or Feishu app setup. Instead of expecting users to know the platform, it acts like an installation wizard and guides them through one small decision at a time.
+This skill takes the opposite approach:
 
-## What This Skill Does
+- start from a beginner-friendly question
+- recommend the safest mode first
+- generate starter agent profile files automatically
+- explain each setup step in plain language
+- verify before calling the setup complete
 
-This skill helps users:
+## What It Helps You Do
 
 - choose a beginner-friendly multi-agent mode
 - create one or more OpenClaw agents
-- generate starter role files for each agent automatically
+- generate starter profile files for each agent
 - connect Feishu bots step by step
-- configure beginner-safe routing
-- verify setup and explain the final result in plain language
+- configure safe routing defaults
+- summarize the final setup in simple language
 
 ## Supported Modes
 
@@ -31,44 +37,37 @@ This skill helps users:
 
 One bot maps to one agent.
 
-Example:
+Examples:
 
 - work bot -> work assistant
 - life bot -> life assistant
 
-This is the safest and easiest default for beginners.
+This is the recommended default for beginners.
 
 ### 2. Single-bot, multi-agent
 
-One Feishu bot is shared, but different Feishu groups map to different agents.
+One Feishu bot is shared, while different Feishu groups map to different agents.
 
-Example:
+Examples:
 
 - product group -> product assistant
 - engineering group -> engineering assistant
 
-V1 supports **group-based routing only** for this mode.
+V1 supports group-based routing only for this mode.
 
 ### 3. A2A collaboration
 
-One main agent talks publicly, while one or more worker agents help in the background.
+One main agent responds publicly while one or more worker agents help in the background.
 
-Example:
+Examples:
 
 - main assistant replies in Feishu
 - data assistant gathers numbers
-- writing assistant polishes the final response
+- writing assistant polishes the final answer
 
-For Feishu, the recommended default is:
+## What Gets Generated
 
-- one public main agent
-- background worker agents
-
-## What Gets Generated for Each Agent
-
-When the skill creates an agent, it does not leave the workspace empty.
-
-It can automatically generate a starter profile bundle:
+For each new agent workspace, the helper scripts can generate:
 
 - `IDENTITY.md`
 - `SOUL.md`
@@ -77,13 +76,13 @@ It can automatically generate a starter profile bundle:
 - `TOOLS.md`
 - `USER.md`
 
-This gives each new agent a lightweight default identity, role boundary, collaboration shape, memory focus, tool guidance, and user-facing purpose.
+This gives each agent a lightweight starter identity, role boundary, collaboration shape, and user-facing purpose.
 
 ## Feishu Focus
 
-This skill currently focuses on Feishu because it is one of the most practical OpenClaw onboarding paths for beginner users in this workflow.
+This repository currently prioritizes Feishu because it is a practical onboarding path for beginner OpenClaw users.
 
-The Feishu flow is intentionally broken into very small steps:
+The setup flow is intentionally broken into small steps:
 
 1. create a Feishu app
 2. enable bot capability
@@ -93,75 +92,69 @@ The Feishu flow is intentionally broken into very small steps:
 6. bind the bot or group routing
 7. verify the result
 
-If the user gets lost inside Feishu, the skill is designed to re-anchor on visible page titles and left-side menu labels instead of dumping raw documentation.
-
-## Design Principles
-
-This skill is intentionally conservative:
+## Project Principles
 
 - preflight first
 - one small step at a time
-- safe defaults over many options
-- one bot at a time
-- one group at a time
+- safe defaults over advanced options
 - minimal config edits
 - verify before claiming success
-
-It is optimized for beginner success, not maximum feature coverage.
+- optimize for beginner success, not maximum feature coverage
 
 ## Current Boundaries
 
-This version intentionally does **not** treat every advanced OpenClaw feature as a beginner path.
-
-Current boundaries:
-
-- single-bot multi-agent supports Feishu **group** routing only
+- single-bot multi-agent supports Feishu group routing only
 - private-chat routing is treated as advanced
-- advanced runtime orchestration is explained carefully, not auto-enabled by default
-- same-group public multi-agent chatter is treated as experimental, not as the recommended Feishu default
+- advanced runtime orchestration is explained carefully, not enabled by default
+- same-group public multi-agent chatter is treated as experimental
 
 ## Directory Structure
 
 ```text
 openclaw-multi-agent-wizard/
-├── SKILL.md
-├── README.md
-├── .gitignore
-├── agents/
-│   └── openai.yaml
-├── assets/
-│   ├── icon-small.svg
-│   └── icon-large.svg
-├── references/
-│   ├── a2a-mode.md
-│   ├── advanced-mode.md
-│   ├── command-branches.md
-│   ├── dialogue-scripts.md
-│   ├── feishu-setup.md
-│   ├── final-summary.md
-│   ├── migration-existing-setup.md
-│   ├── modes.md
-│   ├── persona-templates.md
-│   ├── preflight.md
-│   ├── quick-start.md
-│   ├── routing-basic.md
-│   └── troubleshooting.md
-└── scripts/
-    ├── generate_agent_ids.py
-    ├── render_setup_summary.py
-    ├── suggest_persona_kind.py
-    ├── write_identity_template.py
-    └── write_starter_profile.py
+|-- SKILL.md
+|-- README.md
+|-- README.zh-CN.md
+|-- LICENSE
+|-- CONTRIBUTING.md
+|-- CODE_OF_CONDUCT.md
+|-- CONTRIBUTORS.md
+|-- agents/
+|   `-- openai.yaml
+|-- assets/
+|   |-- icon-small.svg
+|   |-- icon-large.svg
+|   `-- repo-preview.svg
+|-- references/
+|   |-- a2a-mode.md
+|   |-- advanced-mode.md
+|   |-- command-branches.md
+|   |-- dialogue-scripts.md
+|   |-- feishu-setup.md
+|   |-- final-summary.md
+|   |-- migration-existing-setup.md
+|   |-- modes.md
+|   |-- persona-templates.md
+|   |-- preflight.md
+|   |-- quick-start.md
+|   |-- routing-basic.md
+|   `-- troubleshooting.md
+`-- scripts/
+    |-- generate_agent_ids.py
+    |-- render_setup_summary.py
+    |-- suggest_persona_kind.py
+    |-- write_identity_template.py
+    `-- write_starter_profile.py
 ```
 
 ## Key Files
 
-- [SKILL.md](./SKILL.md): main skill instructions
+- [SKILL.md](./SKILL.md): main skill behavior and guardrails
 - [agents/openai.yaml](./agents/openai.yaml): UI metadata
 - [references/quick-start.md](./references/quick-start.md): compact mental model
 - [references/feishu-setup.md](./references/feishu-setup.md): Feishu onboarding flow
 - [references/persona-templates.md](./references/persona-templates.md): starter profile guidance
-- [references/a2a-mode.md](./references/a2a-mode.md): A2A collaboration model
+- [references/a2a-mode.md](./references/a2a-mode.md): A2A collaboration notes
 - [scripts/write_starter_profile.py](./scripts/write_starter_profile.py): starter profile bundle generator
 
 ## Installation
@@ -182,46 +175,31 @@ If `CODEX_HOME` is not set, a common default is:
 
 ## Validation
 
-Validate the skill with the built-in skill validator:
+Basic script validation:
+
+```bash
+python -m compileall scripts
+```
+
+If the local skill validator is available:
 
 ```bash
 python /path/to/quick_validate.py /path/to/openclaw-multi-agent-wizard
 ```
 
-In this project, validation was repeatedly run with the skill-creator validator and the skill passed.
+## Roadmap Ideas
 
-## Development Notes
-
-This repository includes small helper scripts for deterministic setup behavior:
-
-- `generate_agent_ids.py`: create safe agent IDs from display names
-- `suggest_persona_kind.py`: guess a starter role category from the agent name
-- `write_starter_profile.py`: generate the six-file starter profile bundle
-- `render_setup_summary.py`: generate a beginner-friendly final summary
-
-The older `write_identity_template.py` script is retained as a compatibility wrapper and now also writes the full starter profile bundle.
-
-## Recommended Open Source Positioning
-
-If you publish this on GitHub, a clear positioning sentence would be:
-
-> A beginner-friendly OpenClaw multi-agent setup wizard for Codex, with safe Feishu onboarding, simple mode selection, and automatic starter profile generation for each agent.
-
-## Future Improvements
-
-Possible next steps:
-
-- add more channel-specific onboarding paths beyond Feishu
-- add optional deeper persona refinement after initial setup
-- add stronger migration support for messy existing OpenClaw configs
-- add more worker role categories for specialized A2A teams
-
-## License
-
-This project is released under the [MIT License](./LICENSE).
+- add onboarding paths beyond Feishu
+- improve migration support for existing OpenClaw setups
+- add deeper persona refinement for generated agents
+- expand worker role categories for A2A collaboration
 
 ## Community
 
 - [Contributing](./CONTRIBUTING.md)
 - [Code of Conduct](./CODE_OF_CONDUCT.md)
 - [Contributors](./CONTRIBUTORS.md)
+
+## License
+
+Released under the [MIT License](./LICENSE).
