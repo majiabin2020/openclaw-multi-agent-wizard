@@ -6,7 +6,7 @@
 ![GitHub License](https://img.shields.io/github/license/majiabin2020/openclaw-multi-agent-wizard)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/majiabin2020/openclaw-multi-agent-wizard/validate.yml?branch=main)
 
-A beginner-friendly OpenClaw skill for Codex that guides users through multi-agent setup step by step, with safe defaults, simple explanations, and Feishu-focused onboarding.
+A beginner-friendly OpenClaw skill that guides users through multi-agent setup step by step, with safe defaults, simple explanations, and Feishu-focused onboarding.
 
 ![OpenClaw Multi-Agent Wizard preview](./assets/repo-preview.svg)
 
@@ -159,18 +159,18 @@ openclaw-multi-agent-wizard/
 
 ## Installation
 
-Place this skill where Codex can discover local skills.
+Place this skill where OpenClaw can discover local skills.
 
 Typical local skill location:
 
 ```text
-$CODEX_HOME/skills/openclaw-multi-agent-wizard
+$OPENCLAW_HOME/skills/openclaw-multi-agent-wizard
 ```
 
-If `CODEX_HOME` is not set, a common default is:
+If `OPENCLAW_HOME` is not set, a common default is:
 
 ```text
-~/.codex/skills/openclaw-multi-agent-wizard
+~/.openclaw/skills/openclaw-multi-agent-wizard
 ```
 
 ## Validation

@@ -6,7 +6,7 @@
 ![GitHub License](https://img.shields.io/github/license/majiabin2020/openclaw-multi-agent-wizard)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/majiabin2020/openclaw-multi-agent-wizard/validate.yml?branch=main)
 
-这是一个面向新手的 OpenClaw/Codex 技能，用安装向导式的方式一步一步帮助用户完成多 Agent 搭建，重点放在安全默认值、通俗解释和飞书接入。
+这是一个面向新手的 OpenClaw 技能，用安装向导式的方式一步一步帮助用户完成多 Agent 搭建，重点放在安全默认值、通俗解释和飞书接入。
 
 ![OpenClaw Multi-Agent Wizard 预览图](./assets/repo-preview.svg)
 
@@ -155,18 +155,18 @@ openclaw-multi-agent-wizard/
 
 ## 安装方式
 
-把这个技能放到 Codex 能发现本地技能的位置。
+把这个技能放到 OpenClaw 能发现本地技能的位置。
 
 常见路径：
 
 ```text
-$CODEX_HOME/skills/openclaw-multi-agent-wizard
+$OPENCLAW_HOME/skills/openclaw-multi-agent-wizard
 ```
 
-如果没有设置 `CODEX_HOME`，常见默认路径是：
+如果没有设置 `OPENCLAW_HOME`，常见默认路径是：
 
 ```text
-~/.codex/skills/openclaw-multi-agent-wizard
+~/.openclaw/skills/openclaw-multi-agent-wizard
 ```
 
 ## 校验

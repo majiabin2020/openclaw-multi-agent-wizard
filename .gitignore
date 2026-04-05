@@ -12,5 +12,6 @@ dist/
 build/
 *.egg-info/
 *.log
+openclaw-multi-agent-wizard-v*.zip
 .DS_Store
 Thumbs.db
